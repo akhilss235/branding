@@ -1,0 +1,521 @@
+.underwater-hero {
+  --cyan: #c9a84c;
+  --text-soft: rgba(222, 239, 249, 0.8);
+  --panel-radius: 1.2rem;
+  --portrait-radius: 2.6rem;
+  position: relative;
+  min-height: 82vh;
+  min-height: 82svh;
+  isolation: isolate;
+  background: transparent;
+  color: #f5fbff;
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+.underwater-hero__fish-stage {
+  position: absolute;
+  left: 30%;
+  top: 16%;
+  width: min(54vw, 88rem);
+  height: min(46vh, 84rem);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 1;
+  filter: saturate(2.05);
+  transform: translateX(-50%);
+}
+
+.underwater-hero__content {
+  position: relative;
+  z-index: 1;
+  min-height: 82vh;
+  min-height: 82svh;
+  display: grid;
+  width: min(100%, 88rem);
+  margin: 0 auto;
+  grid-template-columns: minmax(0, 1.08fr) minmax(24rem, 30rem);
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  padding: 1.5rem clamp(1.5rem, 5vw, 5rem) 2rem;
+}
+
+.underwater-hero__copy {
+  max-width: 40rem;
+  align-self: center;
+}
+
+.underwater-hero__intro {
+  margin: 0 0 0.4rem;
+  font-size: clamp(0.9rem, 0.9vw, 1rem);
+  color: var(--cyan);
+}
+
+.underwater-hero__name {
+  margin: 0;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.underwater-hero__headline {
+  margin: 1.65rem 0 0;
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  line-height: 0.88;
+  letter-spacing: -0.07em;
+  font-weight: 800;
+  font-size: clamp(2rem, 4.7vw, 4rem);
+  text-wrap: balance;
+}
+
+.underwater-hero__headline-accent {
+  color: #c9a84c;
+  text-shadow: 0 0 22px rgba(118, 229, 244, 0.2);
+}
+
+.underwater-hero__divider {
+  width: 3.25rem;
+  height: 1px;
+  margin: 1.4rem 0 1.25rem;
+  background: linear-gradient(90deg, #c9a84c, transparent);
+  box-shadow: 0 0 14px rgba(57, 216, 245, 0.22);
+}
+
+.underwater-hero__role {
+  margin: 0;
+  color: var(--cyan);
+  font-size: clamp(0.95rem, 1vw, 1.1rem);
+  font-weight: 500;
+}
+
+.underwater-hero__description {
+  margin: 0.95rem 0 0;
+  max-width: 31rem;
+  color: var(--text-soft);
+  font-size: clamp(0.92rem, 0.95vw, 1.05rem);
+  line-height: 1.6;
+}
+
+.underwater-hero__brands {
+  width: min(100%, 22rem);
+  margin-top: 1.4rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.underwater-hero__brands-viewport {
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 1) 12%,
+    rgba(0, 0, 0, 1) 88%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 1) 12%,
+    rgba(0, 0, 0, 1) 88%,
+    transparent 100%
+  );
+}
+
+.underwater-hero__brands-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: brand-swiper 15s linear infinite;
+}
+
+.underwater-hero__brand-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  min-width: 9rem;
+  padding-right: 1.35rem;
+  text-decoration: none;
+  opacity: 0.72;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.underwater-hero__brand-link:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  animation-play-state: paused;
+}
+
+.underwater-hero__brand-image {
+  display: block;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(1) brightness(1.8) contrast(0.85);
+}
+
+.underwater-hero__brand-image.is-misc {
+  width: clamp(4.75rem, 10vw, 7rem);
+}
+
+.underwater-hero__brand-image.is-flumen {
+  width: clamp(5.4rem, 12vw, 8rem);
+}
+
+.underwater-hero__brands:hover .underwater-hero__brands-track {
+  animation-play-state: paused;
+}
+
+.underwater-hero__stats {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+.underwater-hero__stat {
+  position: relative;
+  padding: 0.95rem 0.9rem 0.85rem;
+  background: linear-gradient(180deg, rgba(7, 25, 44, 0.2), rgba(5, 16, 28, 0.04));
+  border: 1px solid rgba(122, 223, 249, 0.06);
+  border-radius: var(--panel-radius);
+  backdrop-filter: blur(8px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  min-height: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.underwater-hero__stat::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+}
+
+.underwater-hero__stat-icon {
+  display: inline-flex;
+  width: 1.35rem;
+  height: 1.35rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  color: rgba(214, 244, 255, 0.88);
+  opacity: 0.95;
+}
+
+.underwater-hero__stat-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.65;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.underwater-hero__stat strong {
+  display: block;
+  color: #c9a84c;
+  font-size: clamp(1.6rem, 1.8vw, 2rem);
+  line-height: 1;
+}
+
+.underwater-hero__stat span:last-child {
+  display: block;
+  margin-top: 0.45rem;
+  color: rgba(225, 238, 245, 0.92);
+  font-size: 0.82rem;
+  line-height: 1.3;
+}
+
+.underwater-hero__visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  min-height: 42rem;
+  padding-right: 0;
+}
+
+.underwater-hero__portrait-frame {
+  position: relative;
+  width: min(100%, 34rem);
+  aspect-ratio: 0.82;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  overflow: hidden;
+  border-radius: var(--portrait-radius);
+}
+
+.underwater-hero__portrait-glow {
+  position: absolute;
+  inset: auto 10% 4% 10%;
+  height: 22%;
+  border-radius: 999px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    #c9a84c,
+    rgba(39, 125, 183, 0.08) 48%,
+    transparent 72%
+  );
+  filter: blur(24px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.underwater-hero__portrait-image {
+  object-fit: cover;
+  object-position: center top;
+  z-index: 2;
+  border-radius: var(--portrait-radius);
+  transform: scale(1);
+  filter: drop-shadow(0 28px 52px rgba(0, 0, 0, 0.36));
+}
+
+.underwater-hero__quote {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.65rem;
+  width: min(20rem, 50%);
+  padding: 1rem 0 0 0.4rem;
+  color: rgba(245, 249, 252, 0.96);
+  border-radius: var(--panel-radius);
+  z-index: 3;
+}
+
+.underwater-hero__quote-mark {
+  display: block;
+  color: var(--cyan);
+  font-size: 3.8rem;
+  line-height: 0.75;
+  margin-bottom: 0.15rem;
+}
+
+.underwater-hero__quote p {
+  margin: 0;
+  font-size: clamp(0.95rem, 0.92vw, 1.08rem);
+  line-height: 1.45;
+}
+
+.underwater-hero__quote-line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin-top: 1.3rem;
+  background: linear-gradient(90deg, #c9a84c, rgba(57, 216, 245, 0.18));
+  position: relative;
+}
+
+@media (min-width: 1400px) {
+  .underwater-hero__content {
+    grid-template-columns: minmax(0, 1.15fr) minmax(26rem, 32rem);
+    gap: clamp(2rem, 3vw, 3.25rem);
+  }
+
+  .underwater-hero__copy {
+    max-width: 42rem;
+  }
+}
+
+@keyframes brand-swiper {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 1180px) {
+
+
+  .underwater-hero__content {
+    width: 100%;
+    margin: 0;
+    grid-template-columns: 1fr;
+    padding-top: 2rem;
+  }
+
+  .underwater-hero__copy {
+    max-width: 100%;
+  }
+
+  .underwater-hero__visual {
+    min-height: 32rem;
+  }
+
+  .underwater-hero__quote {
+    right: 1rem;
+    bottom: 1rem;
+    width: min(22rem, 62%);
+  }
+
+  .underwater-hero__stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 820px) {
+
+  .underwater-hero__visual {
+    min-height: 28rem;
+  }
+
+  .underwater-hero__portrait-frame {
+    width: min(100%, 28rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .underwater-hero {
+    min-height: auto;
+  }
+
+
+
+  .underwater-hero__content {
+    min-height: auto;
+    gap: 1.4rem;
+    padding: 1rem 1rem 2rem;
+  }
+
+
+
+
+  .underwater-hero__fish-stage {
+  position: absolute;
+  left: 60%;
+  top: 46%;
+  width: min(54vw, 88rem);
+  height: min(46vh, 84rem);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 1;
+  filter: saturate(2.05);
+  transform: translateX(-50%);
+}
+
+
+
+
+
+
+
+  .underwater-hero__intro {
+    font-size: 0.98rem;
+  }
+
+  .underwater-hero__name {
+    font-size: 1rem;
+  }
+
+  .underwater-hero__headline {
+    font-size: clamp(2rem, 11vw, 3rem);
+    line-height: 0.88;
+  }
+
+  .underwater-hero__description {
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .underwater-hero__brands {
+    width: min(100%, 18rem);
+    margin-top: 0.65rem;
+  }
+
+  .underwater-hero__stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+  }
+
+  .underwater-hero__stat {
+    padding: 1rem 0.85rem 0.9rem;
+    min-height: 7.6rem;
+  }
+
+  .underwater-hero__visual {
+    min-height: 0;
+    display: grid;
+    grid-template-columns: minmax(8.75rem, 11.5rem) minmax(0, 1fr);
+    align-items: center;
+    gap: 0.65rem;
+    padding-right: 0;
+  }
+
+  .underwater-hero__quote {
+    position: static;
+    width: 100%;
+    padding: 0 0 0.15rem;
+    margin-top: 0;
+    align-self: center;
+  }
+
+  .underwater-hero__portrait-frame {
+    width: 100%;
+    max-width: 9.25rem;
+    justify-self: start;
+    aspect-ratio: 0.72;
+    border-radius: 1.15rem;
+  }
+
+  .underwater-hero__portrait-image {
+    border-radius: 1.15rem;
+    object-position: center top;
+  }
+
+  .underwater-hero__portrait-glow {
+    inset: auto 12% 3% 12%;
+    height: 18%;
+    filter: blur(18px);
+  }
+
+  .underwater-hero__quote-mark {
+    font-size: 2rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .underwater-hero__quote p {
+    max-width: 10.5rem;
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .underwater-hero__quote-line {
+    margin-top: 0.7rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .underwater-hero__content {
+    padding-top: 0.75rem;
+  }
+
+  .underwater-hero__visual {
+    grid-template-columns: minmax(8rem, 9.25rem) minmax(0, 1fr);
+    gap: 0.55rem;
+  }
+
+  .underwater-hero__portrait-frame {
+    max-width: 9rem;
+  }
+
+  .underwater-hero__quote p {
+    max-width: 9.75rem;
+    font-size: 0.78rem;
+  }
+}
