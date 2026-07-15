@@ -1,0 +1,12 @@
+.scroll-reveal {
+  margin: 0;
+}
+
+.scroll-reveal-text {
+  display: inline-block;
+}
+
+.scroll-reveal-text .word {
+  display: inline-block;
+  white-space: pre-wrap; /* to preserve spaces between words */
+}

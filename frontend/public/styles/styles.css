@@ -1,0 +1,136 @@
+:root{
+  --bg:#000;
+  --ink:#EAF7F4;
+  --muted:#A6C9C2;
+  --tq:#35F0D0;
+  --gold:#C9A24D;
+  --line:rgba(255,255,255,.10);
+  --glass1:rgba(8,18,17,.60);
+  --glass2:rgba(6,14,13,.34);
+  --shadow:0 18px 50px rgba(0,0,0,.55);
+}
+
+/* Section */
+.depth{
+  padding:64px 0;
+}
+
+/* Glass Layer */
+.layer{
+  position:relative;
+  border-radius:28px;
+  overflow:hidden;
+
+  background:
+    radial-gradient(circle at 20% 0, rgba(0, 245, 201, .15), transparent 60%),
+    rgba(0, 0, 0, .88);
+      border: 1px solid rgba(0, 245, 201, .25);
+  box-shadow: 0 40px 90px rgba(0, 0, 0, .95);
+  border-radius: 26px;
+
+}
+
+.layer::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+
+
+
+  pointer-events:none;
+}
+
+/* Header */
+.sectionHead{
+  padding:26px 26px 12px;
+}
+
+.sectionHead h3{
+  margin:0;
+  font-family:"Fraunces", serif;
+  font-size:clamp(22px,2.6vw,32px);
+  line-height:1.15;
+}
+
+.sectionHead p{
+  margin:0;
+  max-width:70ch;
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* Pill */
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  padding:7px 10px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(0,0,0,.22);
+  color:var(--ink);
+  margin-bottom:10px;
+}
+
+.spark{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--tq);
+  box-shadow:0 0 0 6px rgba(53,240,208,.12);
+
+  
+}
+
+/* Body */
+.sectionBody{
+  padding:18px 26px 28px;
+  border-top:1px solid rgba(255,255,255,.08);
+}
+
+/* Cards */
+.mini{
+  height:100%;
+  border-radius:18px;
+  border:1px solid var(--line);
+  background:rgba(0,0,0,.18);
+  padding:16px;
+  box-shadow:0 10px 22px rgba(0,0,0,.30);
+}
+
+.hd{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:8px;
+}
+
+.tag{
+  font-size:11px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.chip{
+  font-size:12px;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(8,18,17,.44);
+  color:var(--muted);
+}
+
+.mini h4{
+  margin:0;
+  font-size:15px;
+}
+
+.mini p,
+.mini li{
+  font-size:13px;
+  color:var(--muted);
+}
